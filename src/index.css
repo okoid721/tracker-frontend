@@ -17,3 +17,15 @@ body {
   overflow: hidden;
   color: white;
 }
+
+@layer components {
+  .active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    border-radius: 0 10px 10px 0;
+    background: #222260;
+  }
+}
