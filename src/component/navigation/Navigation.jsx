@@ -27,12 +27,13 @@ const Navigation = () => {
   return (
     <div ref={menuRef} className=" relative">
       <button onClick={toggleMenu}>
-        <FaBars size={30} className=" lg:hidden flex" />
+        <FaBars size={30} className=" lg:hidden" />
         {/* {isOpen ? 'Close Menu' : 'Open Menu'} */}
       </button>
-      {isOpen && (
+
+      <div className={`lg:flex ${isOpen ? 'block' : 'hidden'}`}>
         <div
-          className={` px-6 py-8 lg:w-[135%]  h-[120%] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
+          className={` px-6 py-8 lg:w-[95vw]  h-[90vh] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
         >
           <div className=" h-[100px] flex lg:flex-row flex-col items-center gap-4">
             <img
@@ -65,7 +66,7 @@ const Navigation = () => {
             </li>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
