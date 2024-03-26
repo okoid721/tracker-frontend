@@ -18,8 +18,8 @@ body {
   color: white;
 }
 
-@layer components {
-  .active::before {
+/* @layer components {
+  .active::b {
     content: '';
     position: absolute;
     left: 0;
@@ -27,5 +27,20 @@ body {
     width: 4px;
     border-radius: 0 10px 10px 0;
     background: #222260;
+  }
+} */
+
+@layer components {
+  .main {
+    flex: 1;
+    background: rgba(252, 246, 249, 0.76);
+    border: 3px solid #ffff;
+    backdrop-filter: blur(4.5px);
+    border-radius: 32px;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
 }

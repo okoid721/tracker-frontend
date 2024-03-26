@@ -11,6 +11,7 @@ function App() {
       <Orb />
       <main className=" lg:p-8 p-2 h-full flex gap-8">
         <Navigation active={active} setActive={setActive} />
+        <main className=" main"></main>
       </main>
     </div>
   );
