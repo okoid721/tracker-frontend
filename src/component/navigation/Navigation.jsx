@@ -9,14 +9,13 @@ const Navigation = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div>
       <FaBars size={30} onClick={handleClick} className=" lg:hidden flex" />
 
       <div
-        className={` px-6 py-8 w-screen  lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col absolute lg:sticky  lg:top-[20%] top-[850%] bottom-0 right-0 left-0 gap-2 items-center justify-between ${
-          isOpen ? ' flex flex-col h-[120vh] w-[50px] gap-3' : ' '
-        }`}
+        className={` px-6 py-8 lg:w-screen h-[120%] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
       >
         <div className=" h-[100px] flex lg:flex-row flex-col items-center gap-4">
           <img
@@ -35,10 +34,10 @@ const Navigation = () => {
             return (
               <li
                 key={item.id}
-                className="  flex-col  items-center text-center flex justify-center"
+                className="  lg:flex-col flex-row gap-2 lg:gap-0  items-center text-center flex justify-center"
               >
                 {item.icon}
-                <span className=" hidden lg:flex">{item.title}</span>
+                <span className="">{item.title}</span>
               </li>
             );
           })}
