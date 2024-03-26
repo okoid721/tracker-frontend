@@ -1,6 +1,8 @@
 import React from 'react';
+import { useGlobalContext } from '../../context/globalContext';
 
 const Income = () => {
+  const { addIncome } = useGlobalContext();
   return (
     <div className="Income">
       <main className=" py-8 px-6 w-full">
