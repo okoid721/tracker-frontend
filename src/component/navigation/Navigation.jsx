@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { menuItems } from '../../utils/menuItems';
 import { TbLogout } from 'react-icons/tb';
 import { FaBars } from 'react-icons/fa6';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleOutsideClick = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <div className=" relative">
+    <div ref={menuRef} className=" relative">
       <button onClick={toggleMenu}>
         <FaBars size={30} className=" lg:hidden flex" />
         {/* {isOpen ? 'Close Menu' : 'Open Menu'} */}
