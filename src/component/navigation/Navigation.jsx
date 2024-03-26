@@ -11,11 +11,11 @@ const Navigation = () => {
   };
   return (
     <div>
-      <FaBars size={30} onClick={handleClick} className=" lg:hidden flex " />
+      <FaBars size={30} onClick={handleClick} className=" lg:hidden flex" />
 
       <div
         className={` px-6 py-8 w-screen  lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col absolute lg:sticky  lg:top-[20%] top-[850%] bottom-0 right-0 left-0 gap-2 items-center justify-between ${
-          isOpen ? ' flex flex-col h-[120vh] w-[50px] gap-3' : ' hidden'
+          isOpen ? ' flex flex-col h-[120vh] w-[50px] gap-3' : ' '
         }`}
       >
         <div className=" h-[100px] flex lg:flex-row flex-col items-center gap-4">
