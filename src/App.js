@@ -6,6 +6,7 @@ import Dashboard from './component/dashboard/Dashboard';
 import Income from './component/Income/Income';
 import Expenses from './component/Expenses/Expenses';
 import Saving from './component/Saving/Saving';
+import { useGlobalContext } from './context/globalContext';
 
 function App() {
   const [active, setActive] = useState(1);
@@ -28,6 +29,9 @@ function App() {
     }
   };
 
+  const global = useGlobalContext();
+
+  console.log(global);
   return (
     <div className=" h-full relative ">
       <Orb />
