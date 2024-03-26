@@ -33,10 +33,22 @@ function App() {
       <Orb />
       <main className=" lg:p-8 p-2 h-full flex gap-8">
         <Navigation active={active} setActive={setActive} />
-        <main className=" main">{displayData()}</main>
+        <main className=" lg:flex-1 w-[100vw] h-[100vh]  bg-[#d7d7d7] border-[3px] border-white rounded-[32px] overflow-auto overflow-x-hidden ">
+          {displayData()}
+        </main>
       </main>
     </div>
   );
 }
+
+// .main {
+//   flex: 1;
+//   background: rgba(252, 246, 249, 0.76);
+//   border: 3px solid #ffff;
+//   backdrop-filter: blur(4.5px);
+//   border-radius: 32px;
+//   overflow: auto;
+//   overflow-x: hidden;
+// }
 
 export default App;

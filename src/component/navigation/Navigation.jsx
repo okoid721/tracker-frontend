@@ -33,7 +33,7 @@ const Navigation = ({ active, setActive }) => {
 
       <div className={`lg:flex ${isOpen ? 'block' : 'hidden'}`}>
         <div
-          className={` px-6 py-8   h-[90vh] w-[300px]  bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex  flex-col   gap-2 items-center justify-between `}
+          className={` px-6 py-8 absolute  h-[90vh] w-[300px]  bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex  flex-col   gap-2 items-center justify-between `}
         >
           <div className=" h-[100px] flex  flex-col items-center gap-4">
             <img
@@ -57,7 +57,7 @@ const Navigation = ({ active, setActive }) => {
                       ? "before:content-[''] before:absolute before:left-0 before:top-0 before:w-[4px] h-8 bg-gray-700 rounded-[20px] px-3 py-2  "
                       : ''
                   }`}
-                  onClick={() => setActive(item.id)}
+                  onClick={() => setActive(item.id)(toggleMenu)}
                 >
                   {item.icon}
                   <span className="">{item.title}</span>
