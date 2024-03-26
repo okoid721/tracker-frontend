@@ -3,7 +3,7 @@ import { menuItems } from '../../utils/menuItems';
 import { TbLogout } from 'react-icons/tb';
 import { FaBars } from 'react-icons/fa6';
 
-const Navigation = () => {
+const Navigation = ({ active, setActive }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -52,7 +52,10 @@ const Navigation = () => {
               return (
                 <li
                   key={item.id}
-                  className="  lg:flex-col flex-row gap-2 lg:gap-0  items-center text-center flex justify-center"
+                  className={` lg:flex-col flex-row gap-2 lg:gap-0  items-center text-center flex justify-center ${
+                    active === item.id ? 'active text-black  ' : ''
+                  }`}
+                  onClick={() => setActive(item.id)}
                 >
                   {item.icon}
                   <span className="">{item.title}</span>
