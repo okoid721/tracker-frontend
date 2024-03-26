@@ -54,7 +54,7 @@ const Navigation = ({ active, setActive }) => {
                   key={item.id}
                   className={` lg:flex-col flex-row gap-2 lg:gap-0  items-center text-center flex justify-center ${
                     active === item.id
-                      ? "before:content-[''] before:absolute before:left-0 before:top-0 before:w-4 h-8 bg-gray-300 "
+                      ? "before:content-[''] before:absolute before:left-0 before:top-0 before:w-[4px] h-8 bg-gray-700 rounded-[20px] px-3 py-2  "
                       : ''
                   }`}
                   onClick={() => setActive(item.id)}
