@@ -22,6 +22,9 @@ function App() {
         return <Expenses />;
       case 5:
         return <Saving />;
+      default: {
+        <Dashboard />;
+      }
     }
   };
 
