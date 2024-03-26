@@ -6,7 +6,7 @@ function App() {
   return (
     <div className=" h-full relative ">
       <Orb />
-      <main className=" p-8 h-full flex gap-8">
+      <main className=" lg:p-8 p-2 h-full flex gap-8">
         <Navigation />
       </main>
     </div>
