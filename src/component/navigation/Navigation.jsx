@@ -6,16 +6,27 @@ import { FaBars } from 'react-icons/fa6';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = () => {
+  const menuItemsStyle = {
+    display: isOpen ? 'block' : 'none',
+    position: 'absolute',
+    width: '100%',
+    height: '200px',
+    overflow: 'hidden',
+    transition: 'all 0.3s ease',
+    zIndex: 1000,
+    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.2),0 25px 50px 0 rgba(0,0,0,0.1)',
+  };
+
+  const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div>
-      <FaBars size={30} onClick={handleClick} className=" lg:hidden flex" />
-
+    <div className="">
+      <FaBars size={30} onClick={handleToggle} className=" lg:hidden flex" />
       <div
-        className={` px-6 py-8 lg:w-screen h-[120%] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
+        style={menuItemsStyle}
+        className={` px-6 py-8 lg:w-[135%]  h-[120%] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
       >
         <div className=" h-[100px] flex lg:flex-row flex-col items-center gap-4">
           <img
