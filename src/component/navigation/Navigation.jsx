@@ -33,26 +33,26 @@ const Navigation = ({ active, setActive }) => {
 
       <div className={`lg:flex ${isOpen ? 'block' : 'hidden'}`}>
         <div
-          className={` px-6 py-8 lg:w-[95vw]  h-[90vh] w-[300px] lg:h-[70px] bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex lg:flex-row flex-col   gap-2 items-center justify-between `}
+          className={` px-6 py-8   h-[90vh] w-[300px]  bg-[#d7d7d7] border-[3px] border-white rounded-[32px] flex  flex-col   gap-2 items-center justify-between `}
         >
-          <div className=" h-[100px] flex lg:flex-row flex-col items-center gap-4">
+          <div className=" h-[100px] flex  flex-col items-center gap-4">
             <img
               src="https://avatar.iran.liara.run/public"
               alt=""
               className=" w-[50px] h-[50px] rounded-[50%]"
               s
             />
-            <div className=" flex items-center lg:gap-3 gap-0 lg:flex-row flex-col">
-              <h2 className=" font-bold lg:text-3xl text-2xl">Mike</h2>
+            <div className=" flex items-center  gap-0  flex-col">
+              <h2 className=" font-bold  text-2xl">Mike</h2>
               <p className=" font-semibold">Your Money</p>
             </div>
           </div>
-          <ul className=" flex lg:flex-row flex-col gap-5 items-center relative ">
+          <ul className=" flex  flex-col gap-5 items-center relative ">
             {menuItems.map((item) => {
               return (
                 <li
                   key={item.id}
-                  className={` lg:flex-col flex-row gap-2 lg:gap-0  items-center text-center flex justify-center ${
+                  className={`  flex-row gap-2   items-center text-center flex justify-center cursor-pointer ${
                     active === item.id
                       ? "before:content-[''] before:absolute before:left-0 before:top-0 before:w-[4px] h-8 bg-gray-700 rounded-[20px] px-3 py-2  "
                       : ''
