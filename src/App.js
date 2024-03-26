@@ -15,10 +15,12 @@ function App() {
       case 1:
         return <Dashboard />;
       case 2:
-        return <Income />;
+        return <Dashboard />;
       case 3:
-        return <Expenses />;
+        return <Income />;
       case 4:
+        return <Expenses />;
+      case 5:
         return <Saving />;
     }
   };
