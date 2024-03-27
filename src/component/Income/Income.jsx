@@ -3,7 +3,10 @@ import { useGlobalContext } from '../../context/globalContext';
 import Form from '../from/Form';
 
 const Income = () => {
-  const { addIncome, incomes, getIncomes } = useGlobalContext();
+  const { addIncome, incomes, getIncome } = useGlobalContext();
+  React.useEffect(() => {
+    getIncome();
+  }, []);
   return (
     <div className="Income">
       <main className=" py-8 px-6 w-full">
@@ -12,7 +15,12 @@ const Income = () => {
           <div className="form-container">
             <Form />
           </div>
-          <div className="income"></div>
+          <div className="income">
+            {incomes.map((income) => {
+              const { title, amount, date, category, description } = income;
+              return;
+            })}
+          </div>
         </div>
       </main>
     </div>

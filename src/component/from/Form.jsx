@@ -9,7 +9,7 @@ const Form = () => {
   const [inputState, setInputState] = useState({
     title: '',
     amount: '',
-    date: '',
+    date: null,
     category: '',
     description: '',
   });
@@ -19,24 +19,37 @@ const Form = () => {
   const handleInput = (name) => (e) => {
     setInputState({ ...inputState, [name]: e.target.value });
   };
+
+  const handleDateChange = (date) => {
+    setInputState({ ...inputState, date: date });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addIncome(inputState);
-    console.log(inputState);
+    // Clear the form after submission
+    setInputState({
+      title: '',
+      amount: '',
+      date: null,
+      category: '',
+      description: '',
+    });
   };
+
   return (
-    <div
-      className=" text-black flex flex-col gap-[2rem] "
+    <form
+      className="text-black flex flex-col lg:gap-[2rem] gap-[10px]"
       onSubmit={handleSubmit}
     >
-      <div className="w-[100%] ">
+      <div className="w-[100%]">
         <input
           type="text"
           value={title}
           name={'title'}
           placeholder="Salary Title"
           onChange={handleInput('title')}
-          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]  "
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]"
         />
       </div>
       <div className="w-[100%]">
@@ -46,56 +59,57 @@ const Form = () => {
           name={'amount'}
           placeholder="Salary Amount"
           onChange={handleInput('amount')}
-          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]   "
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]"
         />
       </div>
-      <div className="w-[100%]">
-        <DatePicker
-          id="date"
-          placeholderText="Enter A Date"
-          // selected={new Date(date)}
-          selected={date}
-          dateFormat="dd/mm/yyyy"
-          onChange={(date) => setInputState({ ...inputState, date: date })}
-          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]  "
-        />
+      <div className=" w-[100%] flex flex-col lg:flex-row lg:items-center gap-[10px] lg:justify-between ">
+        <div className="">
+          <DatePicker
+            id="date"
+            placeholderText="Enter A Date"
+            selected={date}
+            dateFormat="dd/MM/yyyy"
+            onChange={handleDateChange}
+            className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white "
+          />
+        </div>
+        <div className=" ">
+          <select
+            name="category"
+            value={category}
+            id="category"
+            required
+            onChange={handleInput('category')}
+            className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white "
+          >
+            <option value="" disabled>
+              Select Category
+            </option>
+            <option value="Salary">Salary</option>
+            <option value="Bonus">Bonus</option>
+            <option value="Freelancer">Freelancer</option>
+            <option value="Investment">Investment</option>
+            <option value="Transfer">Transfer</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
       </div>
-      <div className="flex justify-end  w-[100%]">
-        <select
-          name="category"
-          value={category}
-          id="category"
-          required
-          onChange={handleInput('category')}
-          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]   "
-        >
-          <option value="" disabled>
-            Select Category
-          </option>
-          <option value="Salary">Salary</option>
-          <option value="Bonus">Bonus</option>
-          <option value="Freelancer">Freelancer</option>
-          <option value="Investment">Investment</option>
-          <option value="Transfer">Transfer</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div className="w-[100%]">
+      <div className="">
         <textarea
-          name={'category'}
-          id="category"
+          name={'description'}
+          id="description"
           value={description}
-          cols="30"
-          rows="10"
+          cols="20"
+          rows="5"
           onChange={handleInput('description')}
-          placeholder="Description "
-          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white "
+          placeholder="Description"
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px]  border-white  "
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button onClick={handleSubmit} />
+        <Button type="submit" /> {/* Trigger form submission */}
       </div>
-    </div>
+    </form>
   );
 };
 
