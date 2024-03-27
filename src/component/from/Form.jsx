@@ -93,7 +93,7 @@ const Form = () => {
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button />
+        <Button onClick={handleSubmit} />
       </div>
     </div>
   );

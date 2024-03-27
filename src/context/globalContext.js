@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const BASE_URL = '/api/v1';
+const BASE_URL = 'http://localhost:5000/';
 
 const GlobalContext = React.createContext();
 
 export const GlobalProvider = ({ children }) => {
   const [incomes, setIncomes] = useState([]);
-  const [expenses, setExpenses] = useState([]);
-  const [saving, setSaving] = useState([]);
   const [error, setError] = useState(null);
 
   const addIncome = async (income) => {
-    const response = await axios
-      .post(`${BASE_URL}/add-income`, income)
-      .catch((err) => {
-        setError(err.response.data.message);
-      });
+    try {
+      const response = await axios.post(`${BASE_URL}add-income`, income);
+    } catch (err) {
+      setError(err.response.data.message);
+    }
   };
-  addIncome();
-  const getIncome = async (income) => {
-    const response = await axios.get(`${BASE_URL}/get-incomes`, income);
-    setIncomes(response.data);
+
+  const getIncome = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/v1/get-incomes`
+      );
+      setIncomes(response.data);
+    } catch (err) {
+      setError(err.response.data.message);
+    }
   };
-  getIncome();
+
+  // You may want to call these functions when necessary, not immediately after defining them
+  // addIncome();
+  //  getIncome();
+
   return (
     <GlobalContext.Provider value={{ addIncome, getIncome, incomes }}>
       {children}
