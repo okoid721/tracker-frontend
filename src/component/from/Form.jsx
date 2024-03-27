@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useGlobalContext } from '../../context/globalContext';
+import Button from '../Button/Button';
 
 const Form = () => {
   const { addIncome } = useGlobalContext();
@@ -92,12 +93,7 @@ const Form = () => {
         ></textarea>
       </div>
       <div className="submit-btn">
-        <button
-          onClick={handleSubmit}
-          className="px-[20px] py-[10px] bg-white rounded-md "
-        >
-          Add
-        </button>
+        <Button />
       </div>
     </div>
   );
