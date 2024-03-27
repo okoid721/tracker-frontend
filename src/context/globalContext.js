@@ -11,13 +11,12 @@ export const GlobalProvider = ({ children }) => {
   const [saving, setSaving] = useState([]);
   const [error, setError] = useState(null);
 
-  const addIncome = async () => {
-    try {
-      const response = await axios.post(`${BASE_URL}add-income`, incomes);
-    } catch (error) {
-      setIncomes(error.response.data.message);
-      console.log('error in globalContext addincome');
-    }
+  const addIncome = async (income) => {
+    const response = await axios
+      .post(`${BASE_URL}/add-income`, income)
+      .catch((err) => {
+        setError(err.response.data.message);
+      });
   };
   return (
     <GlobalContext.Provider value={{ addIncome }}>

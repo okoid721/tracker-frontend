@@ -40,7 +40,6 @@ const Navigation = ({ active, setActive }) => {
               src="https://avatar.iran.liara.run/public"
               alt=""
               className=" w-[50px] h-[50px] rounded-[50%]"
-              s
             />
             <div className=" flex items-center  gap-0  flex-col">
               <h2 className=" font-bold  text-2xl">Mike</h2>

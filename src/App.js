@@ -10,6 +10,10 @@ import { useGlobalContext } from './context/globalContext';
 
 function App() {
   const [active, setActive] = useState(1);
+
+  const global = useGlobalContext();
+  console.log(global);
+
   const displayData = () => {
     // eslint-disable-next-line default-case
     switch (active) {
@@ -29,9 +33,6 @@ function App() {
     }
   };
 
-  const global = useGlobalContext();
-
-  console.log(global);
   return (
     <div className=" h-full relative ">
       <Orb />

@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context/globalContext';
 
 const Form = () => {
   const { addIncome } = useGlobalContext();
-  const [input, setInput] = useState({
+  const [inputState, setInputState] = useState({
     title: '',
     amount: '',
     date: '',
@@ -13,54 +13,60 @@ const Form = () => {
     description: '',
   });
 
-  const { title, amount, date, category, description } = input;
+  const { title, amount, date, category, description } = inputState;
 
   const handleInput = (name) => (e) => {
-    setInput({ ...input, [name]: e.target.value });
+    setInputState({ ...inputState, [name]: e.target.value });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    addIncome(input);
-    console.log(input);
+    addIncome(inputState);
+    console.log(inputState);
   };
   return (
-    <div className="form " onSubmit={(e) => e.preventDefault(handleSubmit)}>
-      <div className="input-control">
+    <div
+      className=" text-black flex flex-col gap-[2rem] "
+      onSubmit={handleSubmit}
+    >
+      <div className="w-[100%] ">
         <input
           type="text"
           value={title}
-          name="title"
+          name={'title'}
           placeholder="Salary Title"
           onChange={handleInput('title')}
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]  "
         />
       </div>
-      <div className="input-control">
+      <div className="w-[100%]">
         <input
           type="text"
           value={amount}
-          name="amount"
+          name={'amount'}
           placeholder="Salary Amount"
           onChange={handleInput('amount')}
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]   "
         />
       </div>
-      <div className="input-control">
+      <div className="w-[100%]">
         <DatePicker
           id="date"
           placeholderText="Enter A Date"
           // selected={new Date(date)}
           selected={date}
-          dateFormat="dd/MM/yyyy"
-          onChange={(date) => setInput({ ...input, date: date })}
+          dateFormat="dd/mm/yyyy"
+          onChange={(date) => setInputState({ ...inputState, date: date })}
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]  "
         />
       </div>
-      <div className="selects input-control">
+      <div className="flex justify-end  w-[100%]">
         <select
           name="category"
           value={category}
           id="category"
           required
           onChange={handleInput('category')}
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white w-[100%]   "
         >
           <option value="" disabled>
             Select Category
@@ -73,8 +79,25 @@ const Form = () => {
           <option value="Other">Other</option>
         </select>
       </div>
+      <div className="w-[100%]">
+        <textarea
+          name={'category'}
+          id="category"
+          value={description}
+          cols="30"
+          rows="10"
+          onChange={handleInput('description')}
+          placeholder="Description "
+          className="outline-0 rounded-[5px] border-[2px] px-[20px] py-[10px] border-white "
+        ></textarea>
+      </div>
       <div className="submit-btn">
-        <button>Add</button>
+        <button
+          onClick={handleSubmit}
+          className="px-[20px] py-[10px] bg-white rounded-md "
+        >
+          Add
+        </button>
       </div>
     </div>
   );
