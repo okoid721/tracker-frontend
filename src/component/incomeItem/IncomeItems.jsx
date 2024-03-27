@@ -16,10 +16,10 @@ const IncomeItems = ({
   type,
 }) => {
   return (
-    <div className=" bg-[#FCF6F9] border-[2px] border-[#ffff] rounded-[20px] p-4 mb-4 ">
-      <div className="icon"></div>
-      <div className="content">
-        <h5>{title}</h5>
+    <div className=" bg-[#FCF6F9] border-[2px] border-[#ffff] rounded-[20px] p-4 mb-4 flex items-center gap-4 w-[100%] text-[#222260] ">
+      <div className="w-[80px] h-[80px] rounded-[20px] bg-[#F5F5F5] flex items-center justify-center border-[2px] border-white "></div>
+      <div className=" flex-1 flex flex-col gap-2  ">
+        <h5 className=" text-2xl pl-8 relative ">{title}</h5>
         <div className="inner-content">
           <div className="text">
             <p>
