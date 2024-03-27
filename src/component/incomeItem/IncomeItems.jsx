@@ -2,6 +2,7 @@ import React from 'react';
 import { TbCurrencyNaira } from 'react-icons/tb';
 import { IoCalendarNumberSharp } from 'react-icons/io5';
 import { FaCommentAlt } from 'react-icons/fa';
+import Button from '../Button/Button';
 
 const IncomeItems = ({
   id,
@@ -9,12 +10,13 @@ const IncomeItems = ({
   amount,
   date,
   category,
+  description,
   deleteItem,
   indicatorColor,
   type,
 }) => {
   return (
-    <div className="">
+    <div className=" bg-[#FCF6F9] border-[2px] border-[#ffff] rounded-[20px] p-4 mb-4 ">
       <div className="icon"></div>
       <div className="content">
         <h5>{title}</h5>
@@ -30,6 +32,10 @@ const IncomeItems = ({
               <FaCommentAlt />
               {description}
             </p>
+          </div>
+          <div className="btn-con">
+            {' '}
+            <Button label="Delete" />
           </div>
         </div>
       </div>

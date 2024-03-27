@@ -107,7 +107,8 @@ const Form = () => {
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button type="submit" /> {/* Trigger form submission */}
+        <Button type="submit" label="Add Income" />{' '}
+        {/* Trigger form submission */}
       </div>
     </form>
   );
