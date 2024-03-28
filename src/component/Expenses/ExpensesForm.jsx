@@ -3,9 +3,10 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useGlobalContext } from '../../context/globalContext';
 import Button from '../Button/Button';
+import toast from 'react-hot-toast';
 
 const ExpensesForm = () => {
-  const { addExpenses, getExpenses } = useGlobalContext();
+  const { addExpenses, getExpenses, error } = useGlobalContext();
   const [inputState, setInputState] = useState({
     title: '',
     amount: '',
@@ -43,6 +44,7 @@ const ExpensesForm = () => {
       className="text-black flex flex-col lg:gap-[2rem] gap-[10px]"
       onSubmit={handleSubmit}
     >
+      {error && toast.error}
       <div className="w-[100%]">
         <input
           type="text"
