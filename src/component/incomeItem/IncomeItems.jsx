@@ -75,7 +75,8 @@ const IncomeItems = ({
         <div className=" flex flex-col lg:gap-32 lg:flex-row items-center  ">
           <div className=" flex lg:flex-row flex-col items-center gap-6">
             <p className=" flex items-center gap-2 text-[#333] text-[20px]  ">
-              Amount: <TbCurrencyNaira size={30} />${amount}{' '}
+              Amount: <TbCurrencyNaira size={30} />
+              {amount}{' '}
             </p>
             <p className=" flex items-center gap-2 text-[#333] text-[20px]  ">
               <IoCalendarNumberSharp size={30} /> {date}{' '}
