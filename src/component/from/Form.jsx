@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context/globalContext';
 import Button from '../Button/Button';
 
 const Form = () => {
-  const { addIncome } = useGlobalContext();
+  const { addIncome, getIncome } = useGlobalContext();
   const [inputState, setInputState] = useState({
     title: '',
     amount: '',
@@ -35,6 +35,7 @@ const Form = () => {
       category: '',
       description: '',
     });
+    getIncome();
   };
 
   return (

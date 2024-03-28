@@ -30,13 +30,24 @@ export const GlobalProvider = ({ children }) => {
       setError(err.response.data.message);
     }
   };
+  const deleteIncome = async (id) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/delete/${id}`
+      );
+    } catch (error) {
+      setError(error.response.data.message);
+    }
+  };
 
   // You may want to call these functions when necessary, not immediately after defining them
   // addIncome();
   //  getIncome();
 
   return (
-    <GlobalContext.Provider value={{ addIncome, getIncome, incomes }}>
+    <GlobalContext.Provider
+      value={{ addIncome, getIncome, incomes, deleteIncome }}
+    >
       {children}
     </GlobalContext.Provider>
   );
