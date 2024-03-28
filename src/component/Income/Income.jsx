@@ -4,10 +4,10 @@ import Form from '../from/Form';
 import IncomeItems from '../incomeItem/IncomeItems';
 
 const Income = () => {
-  const { addIncome, incomes, getIncome, deleteIncome  } = useGlobalContext();
+  const { addIncome, incomes, getIncome, deleteIncome } = useGlobalContext();
   React.useEffect(() => {
     getIncome();
-  }, [incomes]);
+  }, []);
 
   return (
     <div className=" ">
@@ -30,7 +30,7 @@ const Income = () => {
                   amount={amount}
                   date={date}
                   category={category}
-                  delete={deleteIncome}
+                  deleteItem={deleteIncome}
                 />
               );
             })}

@@ -11,6 +11,7 @@ import { FaRegDotCircle } from 'react-icons/fa';
 import { FaBookOpen } from 'react-icons/fa';
 import { MdOutlineFoodBank } from 'react-icons/md';
 import { GiClothes } from 'react-icons/gi';
+import { SiFreelancer } from 'react-icons/si';
 
 const IncomeItems = ({
   id,
@@ -32,6 +33,8 @@ const IncomeItems = ({
         return <MdOutlineSavings size={20} />;
       case 'Transfer':
         return <FaMoneyBillTransfer size={20} />;
+      case 'Freelancer':
+        return <SiFreelancer size={20} />;
       case 'Others':
         return <FaRegDotCircle size={20} />;
       default:
@@ -55,13 +58,13 @@ const IncomeItems = ({
     }
   };
   return (
-    <div className=" bg-[#FCF6F9] border-[2px]  border-[#ffff] rounded-[20px] p-4 mb-4 flex items-center gap-4 w-[100%] text-[#222260] ">
+    <div className=" bg-[#FCF6F9] border-[2px]  border-[#ffff] rounded-[20px] p-4 mb-4 flex items-center gap-4 w-[100%] text-[#222260] overflow-x-hidden ">
       <div className="w-[80px] h-[80px] rounded-[20px] lg:flex hidden bg-[#F5F5F5]  items-center justify-center border-[2px] border-white ">
         {' '}
         {type === 'expense' ? expensesIcon() : categoryIcon()}{' '}
       </div>
       <div className=" flex-1 flex  flex-col lg:gap-0   gap-2 items-center lg:items-start  ">
-        <div className=" flex flex-row gap-4 items-center">
+        <div className=" flex  lg:flex-row flex-col gap-4 items-center">
           <h5 className=" text-2xl pl-8 relative  ">{title}</h5>
           <h5 className=" text-2xl pl-8 relative  ">
             {' '}
@@ -82,9 +85,9 @@ const IncomeItems = ({
               {description}
             </p>
           </div>
-          <div className="btn-con ">
+          <div className="btn-con " onClick={() => deleteItem(id)}>
             {' '}
-            <Button label="Delete" onClick={() => deleteItem(id)} />
+            <Button label="Delete" />
           </div>
         </div>
       </div>

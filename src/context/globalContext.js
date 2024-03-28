@@ -18,6 +18,7 @@ export const GlobalProvider = ({ children }) => {
     } catch (err) {
       setError(err.response.data.message);
     }
+    getIncome();
   };
 
   const getIncome = async () => {
@@ -37,7 +38,9 @@ export const GlobalProvider = ({ children }) => {
       );
     } catch (error) {
       setError(error.response.data.message);
+      console.log(error);
     }
+    getIncome();
   };
 
   // You may want to call these functions when necessary, not immediately after defining them
