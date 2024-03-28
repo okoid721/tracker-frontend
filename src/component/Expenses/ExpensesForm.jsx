@@ -86,12 +86,11 @@ const ExpensesForm = () => {
             <option value="" disabled>
               Select Category
             </option>
-            <option value="Salary">Salary</option>
-            <option value="Bonus">Bonus</option>
-            <option value="Freelancer">Freelancer</option>
-            <option value="Investment">Investment</option>
-            <option value="Transfer">Transfer</option>
-            <option value="Other">Other</option>
+            <option value="education">Education</option>
+            <option value="groceries">Groceries</option>
+            <option value="Invest">Investment</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Others">Other</option>
           </select>
         </div>
       </div>
