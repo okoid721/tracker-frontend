@@ -68,7 +68,7 @@ const IncomeItems = ({
           <h5 className=" text-2xl pl-8 relative  ">{title}</h5>
           <h5 className=" text-2xl pl-8 relative  ">
             {' '}
-            {type === 'expense' ? 'For :' : 'Form :'}
+            {type === 'Incomes' ? 'Form :' : 'For :'}
             {category}
           </h5>
         </div>
