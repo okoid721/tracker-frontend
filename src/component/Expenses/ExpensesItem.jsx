@@ -4,14 +4,13 @@ import { TbCurrencyNaira } from 'react-icons/tb';
 import { IoCalendarNumberSharp } from 'react-icons/io5';
 import { FaCommentAlt } from 'react-icons/fa';
 import Button from '../Button/Button';
-import { FaGift } from 'react-icons/fa';
+import dateFormat from '../../utils/dateFormat';
 import { MdOutlineSavings } from 'react-icons/md';
-import { FaMoneyBillTransfer } from 'react-icons/fa6';
+
 import { FaRegDotCircle } from 'react-icons/fa';
 import { FaBookOpen } from 'react-icons/fa';
 import { MdOutlineFoodBank } from 'react-icons/md';
 import { GiClothes } from 'react-icons/gi';
-import { SiFreelancer } from 'react-icons/si';
 
 const ExpensesItems = ({
   id,
@@ -49,7 +48,7 @@ const ExpensesItems = ({
         <div className=" flex  lg:flex-row flex-col gap-4 items-center">
           <h5 className=" text-2xl pl-8 relative  ">{title}</h5>
           <h5 className=" text-2xl pl-8 relative  ">
-            For
+            For:
             {category}
           </h5>
         </div>
@@ -60,7 +59,7 @@ const ExpensesItems = ({
               {amount}{' '}
             </p>
             <p className=" flex items-center gap-2 text-[#333] text-[20px]  ">
-              <IoCalendarNumberSharp size={30} /> {date}{' '}
+              <IoCalendarNumberSharp size={30} /> {dateFormat(date)}{' '}
             </p>
             <p className=" flex items-center gap-2 text-[#333] text-[20px]   ">
               <FaCommentAlt />

@@ -127,8 +127,8 @@ export const GlobalProvider = ({ children }) => {
 
   const totalExpenses = () => {
     let totalExpenses = 0;
-    expenses.forEach((income) => {
-      totalExpenses = totalExpenses + income.amount;
+    expenses.forEach((expense) => {
+      totalExpenses = totalExpenses + expense.amount;
     });
     return totalExpenses;
   };
@@ -136,12 +136,16 @@ export const GlobalProvider = ({ children }) => {
 
   const totalSavings = () => {
     let totalSavings = 0;
-    expenses.forEach((income) => {
-      totalSavings = totalSavings + income.amount;
+    savings.forEach((saving) => {
+      totalSavings = totalSavings + saving.amount;
     });
     return totalSavings;
   };
   console.log(totalSavings());
+
+  const totalBalance = () => {
+    return totalIncome() - totalExpenses() - totalSavings();
+  };
 
   return (
     <GlobalContext.Provider
@@ -161,6 +165,7 @@ export const GlobalProvider = ({ children }) => {
         deleteSavings,
         savings,
         totalSavings,
+        totalBalance,
       }}
     >
       {children}

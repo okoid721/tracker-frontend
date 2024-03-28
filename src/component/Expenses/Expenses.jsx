@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../../context/globalContext';
 import ExpensesForm from './ExpensesForm';
-import IncomeItems from '../incomeItem/IncomeItems';
+import ExpensesItem from './ExpensesItem';
 import { TbCurrencyNaira } from 'react-icons/tb';
 
 const Expenses = () => {
@@ -28,12 +28,13 @@ const Expenses = () => {
           </div>
           <div className="income">
             {expenses.map((expenses) => {
-              const { _id, title, amount, date, category, description } =
+              const { _id, title, amount, date, category, description, type } =
                 expenses;
               return (
-                <IncomeItems
+                <ExpensesItem
                   key={_id}
                   id={_id}
+                  type={type}
                   title={title}
                   description={description}
                   amount={amount}

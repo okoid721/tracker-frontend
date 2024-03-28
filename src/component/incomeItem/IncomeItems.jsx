@@ -8,9 +8,7 @@ import { FaGift } from 'react-icons/fa';
 import { MdOutlineSavings } from 'react-icons/md';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
 import { FaRegDotCircle } from 'react-icons/fa';
-import { FaBookOpen } from 'react-icons/fa';
-import { MdOutlineFoodBank } from 'react-icons/md';
-import { GiClothes } from 'react-icons/gi';
+import dateFormat from '../../utils/dateFormat';
 import { SiFreelancer } from 'react-icons/si';
 
 const IncomeItems = ({
@@ -41,27 +39,11 @@ const IncomeItems = ({
         return null;
     }
   };
-  const expensesIcon = () => {
-    switch (category) {
-      case 'education':
-        return <FaBookOpen size={20} />;
-      case 'groceries':
-        return <MdOutlineFoodBank size={20} />;
-      case 'Invest':
-        return <MdOutlineSavings size={20} />;
-      case 'Fashion':
-        return <GiClothes size={20} />;
-      case 'Others':
-        return <FaRegDotCircle size={20} />;
-      default:
-        return null;
-    }
-  };
+
   return (
     <div className=" bg-[#FCF6F9] border-[2px]  border-[#ffff] rounded-[20px] p-4 mb-4 flex items-center gap-4 w-[100%] text-[#222260] overflow-x-hidden ">
       <div className="w-[80px] h-[80px] rounded-[20px] lg:flex hidden bg-[#F5F5F5]  items-center justify-center border-[2px] border-white ">
-        {' '}
-        {type === 'expense' ? expensesIcon() : categoryIcon()}{' '}
+        {categoryIcon()}
       </div>
       <div className=" flex-1 flex  flex-col lg:gap-0   gap-2 items-center lg:items-start  ">
         <div className=" flex  lg:flex-row flex-col gap-4 items-center">
@@ -78,7 +60,7 @@ const IncomeItems = ({
               {amount}{' '}
             </p>
             <p className=" flex items-center gap-2 text-[#333] text-[20px]  ">
-              <IoCalendarNumberSharp size={30} /> {date}{' '}
+              <IoCalendarNumberSharp size={30} /> {dateFormat(date)}{' '}
             </p>
             <p className=" flex items-center gap-2 text-[#333] text-[20px]   ">
               <FaCommentAlt />

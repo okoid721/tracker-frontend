@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../../context/globalContext';
 import SavingForm from './SavingForm';
-import IncomeItems from '../incomeItem/IncomeItems';
+import IncomeItems from '../Expenses/ExpensesItem';
 import { TbCurrencyNaira } from 'react-icons/tb';
 
 const Expenses = () => {
