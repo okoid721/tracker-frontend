@@ -64,7 +64,7 @@ const ExpensesForm = () => {
         />
       </div>
       <div className=" w-[100%] flex flex-col lg:flex-row lg:items-center gap-[10px] lg:justify-between ">
-        <div className="">
+        <div className=" z-0">
           <DatePicker
             id="date"
             placeholderText="Enter A Date"

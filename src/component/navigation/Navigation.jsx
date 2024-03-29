@@ -25,7 +25,7 @@ const Navigation = ({ active, setActive }) => {
   }, []);
 
   return (
-    <div ref={menuRef} className=" relative">
+    <div ref={menuRef} className=" relative z-50 ">
       <button onClick={toggleMenu}>
         <FaBars size={30} className=" lg:hidden" />
         {/* {isOpen ? 'Close Menu' : 'Open Menu'} */}
