@@ -14,7 +14,7 @@ export const GlobalProvider = ({ children }) => {
   const addIncome = async (income) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/add-income`,
+        `https://expence-tracker-backend-1.onrender.com/api/v1/add-income`,
         income
       );
     } catch (err) {
@@ -26,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
   const getIncome = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-incomes`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/get-incomes`
       );
       setIncomes(response.data);
     } catch (err) {
@@ -36,7 +36,7 @@ export const GlobalProvider = ({ children }) => {
   const deleteIncome = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/delete/${id}`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/delete/${id}`
       );
     } catch (error) {
       setError(error.response.data.message);
@@ -48,7 +48,7 @@ export const GlobalProvider = ({ children }) => {
   const addExpenses = async (expense) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/add-expenses`,
+        `https://expence-tracker-backend-1.onrender.com/api/v1/add-expenses`,
         expense
       );
     } catch (err) {
@@ -60,7 +60,7 @@ export const GlobalProvider = ({ children }) => {
   const getExpenses = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-expenses`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/get-expenses`
       );
       setExpenses(response.data);
     } catch (err) {
@@ -70,7 +70,7 @@ export const GlobalProvider = ({ children }) => {
   const deleteExpenses = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/delete-expenses/${id}`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/delete-expenses/${id}`
       );
     } catch (error) {
       setError(error.response.data.message);
@@ -81,7 +81,7 @@ export const GlobalProvider = ({ children }) => {
   const addSavings = async (savings) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/add-saving`,
+        `https://expence-tracker-backend-1.onrender.com/api/v1/add-saving`,
         savings
       );
     } catch (err) {
@@ -93,7 +93,7 @@ export const GlobalProvider = ({ children }) => {
   const getSavings = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-saving`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/get-saving`
       );
       setSavings(response.data);
     } catch (err) {
@@ -103,7 +103,7 @@ export const GlobalProvider = ({ children }) => {
   const deleteSavings = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/delete-saving/${id}`
+        `https://expence-tracker-backend-1.onrender.com/api/v1/delete-saving/${id}`
       );
     } catch (error) {
       setError(error.response.data.message);
@@ -175,7 +175,7 @@ export const GlobalProvider = ({ children }) => {
         totalSavings,
         totalBalance,
         transactionHistory,
-        error
+        error,
       }}
     >
       {children}
